@@ -12,7 +12,16 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": ["es2018", "dom"]
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@env/*": ["src/environments/*"],
+      "@coreapp/*": ["src/app/core/*"],
+      "@root-store/*": ["src/app/core/root-store/*"],
+      "@components/*": ["src/app/core/components/*"],
+      "@models/*": ["src/app/core/models/*"],
+      "@services/*": ["src/app/core/services/*"],
+      "@pages/*": ["src/app/pages/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

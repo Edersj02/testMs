@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> <strong>Inicio</strong> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form #f="ngForm">
+    <ion-item>
+      <ion-label position="stacked"
+        ><strong>Longitud de subcadena</strong></ion-label
+      >
+      <ion-input
+        [(ngModel)]="subSize"
+        name="subSize"
+        type="number"
+        placeholder="escribe un numero"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"
+        ><strong>Cadena de máximo 500 caracteres</strong></ion-label
+      >
+      <ion-textarea
+        [(ngModel)]="textarea"
+        rows="6"
+        placeholder="Escribe algo..."
+        name="textarea"
+        maxlength="500"
+        required
+      ></ion-textarea>
+    </ion-item>
+    <ion-item lines="none" style="text-align: end">
+      <ion-label> {{ textarea.length }}/500 </ion-label>
+    </ion-item>
+    <div>
+      <app-text-list></app-text-list>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button [disabled]="!f.valid" expand="block" (click)="processText()"
+    >Procesar</ion-button
+  >
+</ion-footer>
